@@ -1,5 +1,8 @@
 package cpuLogger;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class cpuLMain {
@@ -13,7 +16,6 @@ public class cpuLMain {
 		int i = 0;
 		int maxSize = 10;
 		cpuL[] store = new cpuL[maxSize];
-		
 
 		while (true) {
 			int opt = 10;
@@ -34,9 +36,9 @@ public class cpuLMain {
 			} else if (opt == 3) {
 				print(store);
 			} else if (opt == 4) {
-				read();
+				read(store);
 			} else if (opt == 5) {
-				write(store);
+				write(store, maxSize);
 			} else if (opt == 0) {
 				System.out.println("END OF PROGRAM");
 				System.exit(0);
@@ -153,7 +155,6 @@ public class cpuLMain {
 			int freq = sc.nextInt();
 			for (int i = 0; i < maxSize; i++) {
 				if (store[i].family == null) {
-					System.out.print("break");
 					break;
 				} else if (store[i].freq == freq) {
 					result = result + i + "|";
@@ -165,7 +166,6 @@ public class cpuLMain {
 			int freqOC = sc.nextInt();
 			for (int i = 0; i < maxSize; i++) {
 				if (store[i].family == null) {
-					System.out.print("break");
 					break;
 				} else if (store[i].freqOC == freqOC) {
 					System.out.println(result);
@@ -176,7 +176,6 @@ public class cpuLMain {
 			int freqOC = 0;
 			for (int i = 0; i < maxSize; i++) {
 				if (store[i].family == null) {
-					System.out.print("break");
 					break;
 				}
 				if (store[i].freqOC > freqOC) {
@@ -196,19 +195,73 @@ public class cpuLMain {
 		System.out.println(store[in]);
 	}
 
-	public static void read() {
+	public static void read(cpuL[] store) {
 		System.out.println("READ MODE");
 		/**
-		 * use read and split function
-		 */
+		String temp = null;
+		try {
+			sc = new Scanner(new File("cpuLog.txt"));
+		} catch (Exception e) {
+			System.out.println("READ ERROR");
+		}
+		
+		String arraySet[] = sc.toString().split("\\");
+		String arrayCat[] = null;
+		for (int i = 0; arraySet.length > i; i++) {
+			temp = arraySet[i];
+			arrayCat[i] = temp.split("|");
+		}*/
+		Scanner sc = null;
+		try {
+			sc = new Scanner(new File("cpuLog.txt"));
+		} catch (Exception e) {
+			System.out.println("READ ERROR");
+		}
+		int i = 0;
+		while (sc.hasNext()) {
+			String type = sc.next();
+			String family = sc.next();
+			String model = sc.next();
+			String socket = sc.next();
+			String freq = sc.next();
+			String freqOC = sc.next();
+			String fsb = sc.next();
+			String width = sc.next();
+			String core = sc.next();
+			String thread = sc.next();
+			String multiMin = sc.next();
+			String multiMax = sc.next();
+			String vcoreBase = sc.next();
+			String vcoreMax = sc.next();
+			String vcoreOC = sc.next();
+			
+			store[i] = new cpuL (type, family, model, socket, Integer.parseInt(freq), Integer.parseInt(freqOC), Integer.parseInt(fsb), Integer.parseInt(width), Integer.parseInt(core), Integer.parseInt(thread), Float.parseFloat(multiMin), Float.parseFloat(multiMax), Float.parseFloat(vcoreBase), Float.parseFloat(vcoreMax), Float.parseFloat(vcoreOC));
+		}
+		sc.close();
 		// System.out.println("DATA HAS BEEN LOADED");
 	}
 
-	public static void write(cpuL[] store) {
+	public static void write(cpuL[] store, int maxSize) {
 		System.out.println("WRITE MODE");
 		/**
 		 * write everything to file on one line
 		 */
-		// System.out.println("DATA HAS BEEN WRITTEN TO FILE");
+		Formatter x = null;
+
+		try {
+			x = new Formatter("cpuLog.txt");
+		} catch (Exception e) {
+			System.out.println("ERROR");
+		}
+		for (int i = 0; i < maxSize; i++) {
+			if (store[i].family == null) {
+				break;
+			} else {
+				x.format("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", store[i].type, " ", store[i].family, " ", store[i].model, " ", store[i].socket, " ", store[i].freq, " ", store[i].freqOC, " ", store[i].fsb, " ", store[i].width, " ", store[i].core, " ", store[i].thread, " ", store[i].multiMin, " ", store[i].multiMax, " ", store[i].vcoreBase, " ", store[i].vcoreMax, " ", store[i].vcoreOC);
+			}
+		}
+		
+		x.close();
+		System.out.println("DATA HAS BEEN WRITTEN TO FILE");
 	}
 }

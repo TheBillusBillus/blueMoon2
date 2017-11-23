@@ -37,6 +37,6 @@ public class cpuL {
 	}
 	
 	public String toString() {
-		return this.type + "|" + this.family  + "|" + this.model + "|" + this.socket + "|" + this.freq + "|" + this.freqOC + "|" + this.fsb + "|" + this.width + "|" + this.core + "|" + this.thread + "|" + this.multiMin + "|" + this.multiMax + "|" + this.vcoreBase + "|" + this.vcoreMax + "|" + this.vcoreOC + "\\";
+		return this.type + "|" + this.family  + "|" + this.model + "|" + this.socket + "|" + this.freq + "|" + this.freqOC + "|" + this.fsb + "|" + this.width + "|" + this.core + "|" + this.thread + "|" + this.multiMin + "|" + this.multiMax + "|" + this.vcoreBase + "|" + this.vcoreMax + "|" + this.vcoreOC + "|";
 	}
 }
