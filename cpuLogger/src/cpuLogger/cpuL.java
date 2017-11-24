@@ -22,6 +22,13 @@ public class cpuL {
 	public float vcoreMax;
 	public float vcoreOC;
 	
+	/**
+	 * takes input from user manually
+	 * @param i counter
+	 * @param maxSize size of store
+	 * @param store array of cpuL objects
+	 * @return
+	 */
 	public static int takeInput(int i, int maxSize, cpuL[] store) {
 		Scanner sc = new Scanner(System.in);
 
@@ -97,6 +104,15 @@ public class cpuL {
 		return i;
 	}
 	
+	/**
+	 * four different search modes that searches the cpuL data sets in store
+	 * 1. searches for cpu by name of family and model
+	 * 2. searches for cpu by base clock speed
+	 * 3. searches for cpu by overclocked clock speeds
+	 * 4. searches for highest overclocked clock speed of all data loaded
+	 * @param store array of cpuL objects
+	 * @param maxSize size of store
+	 */
 	public static void search(cpuL[] store, int maxSize) {
 		Scanner sc = new Scanner(System.in);
 		Scanner sc2 = new Scanner(System.in);
@@ -160,6 +176,10 @@ public class cpuL {
 		}
 	}
 
+	/**
+	 * prints out a specific data set stored in store
+	 * @param store array of cpuL objects
+	 */
 	public static void print(cpuL[] store) {
 		System.out.println("PRINT MODE");
 		Scanner sc = new Scanner(System.in);
@@ -169,22 +189,14 @@ public class cpuL {
 		System.out.println(store[in]);
 	}
 
+	/**
+	 * reads the predefined file that contains information written to it by the
+	 * write method
+	 * takes the read information and stores it inside the array store
+	 * @param store array were cpuL objects are stored
+	 */
 	public static void read(cpuL[] store) {
 		System.out.println("READ MODE");
-		/**
-		String temp = null;
-		try {
-			sc = new Scanner(new File("cpuLog.txt"));
-		} catch (Exception e) {
-			System.out.println("READ ERROR");
-		}
-		
-		String arraySet[] = sc.toString().split("\\");
-		String arrayCat[] = null;
-		for (int i = 0; arraySet.length > i; i++) {
-			temp = arraySet[i];
-			arrayCat[i] = temp.split("|");
-		}*/
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File("cpuLog.txt"));
@@ -208,18 +220,27 @@ public class cpuL {
 			String vcoreBase = sc.next();
 			String vcoreMax = sc.next();
 			String vcoreOC = sc.next();
-			
-			store[i] = new cpuL (type, family, model, socket, Integer.parseInt(freq), Integer.parseInt(freqOC), Integer.parseInt(fsb), Integer.parseInt(width), Integer.parseInt(core), Integer.parseInt(thread), Float.parseFloat(multiMin), Float.parseFloat(multiMax), Float.parseFloat(vcoreBase), Float.parseFloat(vcoreMax), Float.parseFloat(vcoreOC));
+
+			store[i] = new cpuL(type, family, model, socket, Integer.parseInt(freq), Integer.parseInt(freqOC),
+					Integer.parseInt(fsb), Integer.parseInt(width), Integer.parseInt(core), Integer.parseInt(thread),
+					Float.parseFloat(multiMin), Float.parseFloat(multiMax), Float.parseFloat(vcoreBase),
+					Float.parseFloat(vcoreMax), Float.parseFloat(vcoreOC));
 		}
 		sc.close();
 		// System.out.println("DATA HAS BEEN LOADED");
 	}
 
+	/**
+	 * writes everything in store to a predefined file separates different variable
+	 * with a space separates different sets of variables with a new line
+	 * 
+	 * @param store
+	 *            list of cpuL objects
+	 * @param maxSize
+	 *            size of store
+	 */
 	public static void write(cpuL[] store, int maxSize) {
 		System.out.println("WRITE MODE");
-		/**
-		 * write everything to file on one line
-		 */
 		Formatter x = null;
 
 		try {
@@ -231,15 +252,54 @@ public class cpuL {
 			if (store[i].family == null) {
 				break;
 			} else {
-				x.format("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", store[i].type, " ", store[i].family, " ", store[i].model, " ", store[i].socket, " ", store[i].freq, " ", store[i].freqOC, " ", store[i].fsb, " ", store[i].width, " ", store[i].core, " ", store[i].thread, " ", store[i].multiMin, " ", store[i].multiMax, " ", store[i].vcoreBase, " ", store[i].vcoreMax, " ", store[i].vcoreOC);
+				x.format("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", store[i].type, " ",
+						store[i].family, " ", store[i].model, " ", store[i].socket, " ", store[i].freq, " ",
+						store[i].freqOC, " ", store[i].fsb, " ", store[i].width, " ", store[i].core, " ",
+						store[i].thread, " ", store[i].multiMin, " ", store[i].multiMax, " ", store[i].vcoreBase, " ",
+						store[i].vcoreMax, " ", store[i].vcoreOC);
 			}
 		}
-		
+
 		x.close();
 		System.out.println("DATA HAS BEEN WRITTEN TO FILE");
 	}
-	
-	public cpuL(String type, String family, String model, String socket, int freq, int freqOC, int fsb, int width, int core, int thread, float multiMin, float multiMax, float vcoreBase, float vcoreMax, float vcoreOC) {
+
+	/**
+	 * constructor used for directly creating a cpuL object from known information
+	 * 
+	 * @param type
+	 *            string
+	 * @param family
+	 *            string
+	 * @param model
+	 *            string
+	 * @param socket
+	 *            string
+	 * @param freq
+	 *            int
+	 * @param freqOC
+	 *            int
+	 * @param fsb
+	 *            int
+	 * @param width
+	 *            int
+	 * @param core
+	 *            int
+	 * @param thread
+	 *            int
+	 * @param multiMin
+	 *            float
+	 * @param multiMax
+	 *            float
+	 * @param vcoreBase
+	 *            float
+	 * @param vcoreMax
+	 *            float
+	 * @param vcoreOC
+	 *            float
+	 */
+	public cpuL(String type, String family, String model, String socket, int freq, int freqOC, int fsb, int width,
+			int core, int thread, float multiMin, float multiMax, float vcoreBase, float vcoreMax, float vcoreOC) {
 		this.type = type;
 		this.family = family;
 		this.model = model;
@@ -256,10 +316,17 @@ public class cpuL {
 		this.vcoreMax = vcoreMax;
 		this.vcoreOC = vcoreOC;
 	}
-	
+
+	/**
+	 * toString method defines how cpuL objects are printed
+	 */
 	public String toString() {
-		return  "|" + "TYPE: " + this.type + "|" + "FAMILY: " +this.family  + "|" + "MODEL: " +this.model + "|" + "SOCKET: " +this.socket + "|" + "BASE CLOCK SPEED: " +this.freq + "|" + "OC CLOCK SPEED: " +this.freqOC + "|" + "FSB: " +this.fsb + "|" + "DATA WIDTH: " +this.width + "|" + "CORE COUNT: " +this.core + "|" + "THREAD COUNT: " +this.thread + "|" + "MINIMUM MULTIPLIER: " +this.multiMin + "|" + "MAX MULTIPLER: " +this.multiMax + "|" + "BASE VCORE: " +this.vcoreBase + "|" + "MAX VCORE: " +this.vcoreMax + "|" + "OC VCORE: " +this.vcoreOC + "|";
+		return "|" + "TYPE: " + this.type + "|" + "FAMILY: " + this.family + "|" + "MODEL: " + this.model + "|"
+				+ "SOCKET: " + this.socket + "|" + "BASE CLOCK SPEED: " + this.freq + "|" + "OC CLOCK SPEED: "
+				+ this.freqOC + "|" + "FSB: " + this.fsb + "|" + "DATA WIDTH: " + this.width + "|" + "CORE COUNT: "
+				+ this.core + "|" + "THREAD COUNT: " + this.thread + "|" + "MINIMUM MULTIPLIER: " + this.multiMin + "|"
+				+ "MAX MULTIPLER: " + this.multiMax + "|" + "BASE VCORE: " + this.vcoreBase + "|" + "MAX VCORE: "
+				+ this.vcoreMax + "|" + "OC VCORE: " + this.vcoreOC + "|";
 	}
-	
-	
-} 
+
+}
