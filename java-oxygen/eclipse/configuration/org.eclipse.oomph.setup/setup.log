@@ -1,0 +1,305 @@
+[2017-10-17 15:41:47] Executing bootstrap tasks
+[2017-10-17 15:41:47] Java(TM) SE Runtime Environment 1.8.0_144-b01
+[2017-10-17 15:41:47] Product org.eclipse.products.epp.package.java.oxygen
+[2017-10-17 15:41:47] Bundle org.eclipse.oomph.setup 1.8.0.v20170408-0745, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:47] Bundle org.eclipse.oomph.setup.core 1.8.0.v20170531-0903, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:47] Bundle org.eclipse.oomph.setup.p2 1.8.0.v20170318-0419, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:47] Performing P2 Director (Eclipse IDE for Java Developers (Oxygen))
+[2017-10-17 15:41:47] Offline = false
+[2017-10-17 15:41:47] Mirrors = true
+[2017-10-17 15:41:47] Resolving 24 requirements from 3 repositories to C:\Users\2019060\eclipse\java-oxygen\eclipse
+[2017-10-17 15:41:47] Requirement epp.package.java [4.7.0,4.8.0)
+[2017-10-17 15:41:47] Requirement org.eclipse.platform.feature.group [4.7.0,4.8.0)
+[2017-10-17 15:41:47] Requirement org.eclipse.rcp.feature.group [4.7.0,4.8.0)
+[2017-10-17 15:41:47] Requirement org.eclipse.buildship.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.eclemma.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.egit.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.egit.mylyn.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.jdt.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.jgit.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.m2e.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.m2e.logback.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.bugzilla_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.context_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.git.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.hudson.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.ide_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.java_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn.wikitext_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.mylyn_feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.recommenders.mylyn.rcp.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.recommenders.rcp.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.recommenders.snipmatch.rcp.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.wst.xml_ui.feature.feature.group
+[2017-10-17 15:41:47] Requirement org.eclipse.oomph.setup.feature.group
+[2017-10-17 15:41:47] Repository http://download.eclipse.org/technology/epp/packages/oxygen
+[2017-10-17 15:41:47] Repository http://download.eclipse.org/releases/oxygen
+[2017-10-17 15:41:47] Repository http://download.eclipse.org/oomph/updates/milestone/latest
+[2017-10-17 15:41:47] ERROR: org.eclipse.equinox.p2.metadata.repository code=1002 Unable to read repository at http://download.eclipse.org/releases/oxygen.
+ERROR: org.eclipse.equinox.p2.repository code=0 An error occurred while downloading http://download.eclipse.org/technology/epp/packages/oxygen/content.xml.xz. The cache file C:\Users\2019060\.p2\org.eclipse.equinox.p2.repository\cache\downloading\-1747184149 could not be renamed to C:\Users\2019060\.p2\org.eclipse.equinox.p2.repository\cache\-1747184149.
+  at org.eclipse.equinox.internal.p2.repository.CacheManager.updateCache(CacheManager.java:428)
+  at org.eclipse.equinox.internal.p2.repository.CacheManager.createCacheFromFile(CacheManager.java:132)
+  at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.getLocalFile(XZedSimpleMetadataRepositoryFactory.java:56)
+  at org.eclipse.equinox.internal.p2.metadata.repository.XZedSimpleMetadataRepositoryFactory.load(XZedSimpleMetadataRepositoryFactory.java:78)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+  at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  at java.lang.reflect.Method.invoke(Unknown Source)
+  at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+  at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.addChild(CompositeMetadataRepository.java:166)
+  at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository.<init>(CompositeMetadataRepository.java:106)
+  at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:122)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+  at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  at java.lang.reflect.Method.invoke(Unknown Source)
+  at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+  at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+  at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+  at org.eclipse.oomph.p2.internal.core.ProfileTransactionImpl$RepositoryLoader$Worker.perform(ProfileTransactionImpl.java:1613)
+  at org.eclipse.oomph.util.WorkerPool$Worker.run(WorkerPool.java:428)
+  at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+[2017-10-17 15:41:47] 
+[2017-10-17 15:41:58] Executing bootstrap tasks
+[2017-10-17 15:41:58] Java(TM) SE Runtime Environment 1.8.0_144-b01
+[2017-10-17 15:41:58] Product org.eclipse.products.epp.package.java.oxygen
+[2017-10-17 15:41:58] Bundle org.eclipse.oomph.setup 1.8.0.v20170408-0745, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:58] Bundle org.eclipse.oomph.setup.core 1.8.0.v20170531-0903, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:58] Bundle org.eclipse.oomph.setup.p2 1.8.0.v20170318-0419, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2017-10-17 15:41:58] Performing P2 Director (Eclipse IDE for Java Developers (Oxygen))
+[2017-10-17 15:41:58] Offline = false
+[2017-10-17 15:41:58] Mirrors = true
+[2017-10-17 15:41:58] Resolving 24 requirements from 3 repositories to C:\Users\2019060\eclipse\java-oxygen\eclipse
+[2017-10-17 15:41:58] Requirement epp.package.java [4.7.0,4.8.0)
+[2017-10-17 15:41:58] Requirement org.eclipse.platform.feature.group [4.7.0,4.8.0)
+[2017-10-17 15:41:58] Requirement org.eclipse.rcp.feature.group [4.7.0,4.8.0)
+[2017-10-17 15:41:58] Requirement org.eclipse.buildship.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.eclemma.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.egit.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.egit.mylyn.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.jdt.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.jgit.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.m2e.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.m2e.logback.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.bugzilla_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.context_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.git.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.hudson.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.ide_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.java_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn.wikitext_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.mylyn_feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.recommenders.mylyn.rcp.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.recommenders.rcp.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.recommenders.snipmatch.rcp.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.wst.xml_ui.feature.feature.group
+[2017-10-17 15:41:58] Requirement org.eclipse.oomph.setup.feature.group
+[2017-10-17 15:41:58] Repository http://download.eclipse.org/technology/epp/packages/oxygen
+[2017-10-17 15:41:58] Repository http://download.eclipse.org/releases/oxygen
+[2017-10-17 15:41:58] Repository http://download.eclipse.org/oomph/updates/milestone/latest
+[2017-10-17 15:42:02] Calculating requirements and dependencies.
+[2017-10-17 15:42:02] Computing prerequisite plan
+[2017-10-17 15:42:04] Collecting 3 artifacts from http://download.eclipse.org/technology/epp/packages/oxygen
+[2017-10-17 15:42:04] Downloading org.eclipse.epp.package.java
+[2017-10-17 15:42:04] Downloading epp.package.java.executable.win32.win32.x86_64
+[2017-10-17 15:42:04] Downloading org.eclipse.epp.package.common
+[2017-10-17 15:42:04] Fetching org.eclipse.epp.package.java_4.7.1.20171005-1200.jar.pack.gz from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/ (50.01kB)
+[2017-10-17 15:42:04] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://ftp.osuosl.org/pub/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:44:05] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.math.princeton.edu/pub/eclipse//technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:46:05] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://ftp.ussg.iu.edu/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:48:06] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:50:06] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://eclipse.mirror.rafal.ca/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:52:07] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.cc.vt.edu/pub/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:54:07] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirrors.xmission.com/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:56:08] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 15:58:09] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:00:10] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.onet.pl/pub/mirrors/eclipse//technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:02:11] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.tspu.ru/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:04:12] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:06:12] Repeated attempts to download http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz probably because it can't be processed
+[2017-10-17 16:06:12] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:08:12] Repeated attempts to download http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz probably because it can't be processed
+[2017-10-17 16:08:12] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar.pack.gz from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/ (90.27kB)
+[2017-10-17 16:10:13] Fetching org.eclipse.epp.package.common_4.7.1.20171005-1200.jar from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/plugins/ (90.96kB)
+[2017-10-17 16:10:13] Mirrored 3 artifacts from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/ at 492kb/s with 3 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://ftp.osuosl.org/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirror.math.princeton.edu/pub/eclipse//technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://ftp.ussg.iu.edu/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirror.cc.columbia.edu/pub/software/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://eclipse.mirror.rafal.ca/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirror.cc.vt.edu/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirrors.xmission.com/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirror.onet.pl/pub/mirrors/eclipse//technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Mirrored 1 artifacts from http://mirror.tspu.ru/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:13] Collected 3 artifacts for http://download.eclipse.org/technology/epp/packages/oxygen in 1,689.761s
+[2017-10-17 16:10:14] Collecting 36 artifacts from http://download.eclipse.org/oomph/updates/milestone/latest
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.resources.edit
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.setup.p2
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.workingsets.edit
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.setup.p2.edit
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.jreinfo.ui
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.p2
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.setup
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.setup.core
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.jreinfo
+[2017-10-17 16:10:14] Downloading org.eclipse.oomph.base
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.setup.p2.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.csclub.uwaterloo.ca/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (13.08kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.workingsets.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.math.princeton.edu/pub/eclipse//oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (16.25kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.setup.p2_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (20.47kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.jreinfo_1.8.0.v20170318-0624.jar.pack.gz from http://mirror.cc.vt.edu/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (17.47kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.resources.edit_1.8.0.v20170318-0419.jar.pack.gz from http://ftp.osuosl.org/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (14.15kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.p2_1.8.0.v20170410-0909.jar from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/features/ (28.45kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.jreinfo.ui_1.8.0.v20170327-1117.jar.pack.gz from http://ftp.ussg.iu.edu/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (27.07kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.p2_1.8.0.v20170410-0909.jar from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/features/ (28.45kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.setup_1.9.0.v20170706-0615.jar from http://www.gtlib.gatech.edu/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/features/ (28.51kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.jreinfo.ui_1.8.0.v20170327-1117.jar.pack.gz from http://ftp.ussg.iu.edu/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (27.07kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.setup_1.9.0.v20170706-0615.jar from http://www.gtlib.gatech.edu/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/features/ (28.51kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.base_1.8.0.v20170318-0624.jar.pack.gz from http://eclipse.mirror.rafal.ca/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (33.74kB)
+[2017-10-17 16:10:14] Fetching org.eclipse.oomph.setup.core_1.8.0.v20170531-0903.jar from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/features/ (28.76kB)
+[2017-10-17 16:10:15] Downloading org.eclipse.nebula.widgets.tablecombo
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.resources
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.p2.edit
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.workingsets
+[2017-10-17 16:10:15] Fetching org.eclipse.oomph.resources_1.8.0.v20170318-0419.jar.pack.gz from http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (41.22kB)
+[2017-10-17 16:10:15] Fetching org.eclipse.oomph.workingsets_1.8.0.v20170318-0419.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (21.29kB)
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.predicates.edit
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.base.edit
+[2017-10-17 16:10:15] Fetching org.eclipse.oomph.p2.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.dkm.cz/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (20.32kB)
+[2017-10-17 16:10:15] Fetching org.eclipse.oomph.predicates.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (19.82kB)
+[2017-10-17 16:10:15] Fetching org.eclipse.oomph.base.edit_1.8.0.v20170318-0624.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (23.89kB)
+[2017-10-17 16:10:15] Downloading org.eclipse.oomph.p2
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.predicates
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.p2_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (33.4kB)
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.predicates_1.8.0.v20170327-1117.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (25.44kB)
+[2017-10-17 16:10:16] Fetching org.eclipse.nebula.widgets.tablecombo_1.0.0.201707111605.jar from http://mirror.onet.pl/pub/mirrors/eclipse//oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (36.91kB)
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.setup.doc
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.setup.ui
+[2017-10-17 16:10:16] Downloading org.apache.httpcomponents.httpcore
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.setup.ui_1.8.0.v20170530-1735.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (210.21kB)
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.setup.doc_1.9.0.v20170706-0615.jar from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (2.49MB)
+[2017-10-17 16:10:16] Fetching org.apache.httpcomponents.httpcore_4.4.6.v20170210-0925.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (107.7kB)
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.setup.editor
+[2017-10-17 16:10:16] Downloading org.apache.httpcomponents.httpclient
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.setup.editor_1.8.0.v20170327-1117.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (120.74kB)
+[2017-10-17 16:10:16] Fetching org.apache.httpcomponents.httpclient_4.5.2.v20170210-0925.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (323.38kB)
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.p2.doc
+[2017-10-17 16:10:16] Downloading org.eclipse.oomph.p2.ui
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.p2.doc_1.8.0.v20170318-0419.jar from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (313.03kB)
+[2017-10-17 16:10:16] Fetching org.eclipse.oomph.p2.ui_1.8.0.v20170327-1117.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (98.22kB)
+[2017-10-17 16:10:17] Downloading org.eclipse.oomph.setup.ui.questionnaire
+[2017-10-17 16:10:17] Downloading org.apache.commons.codec
+[2017-10-17 16:10:17] Fetching org.eclipse.oomph.setup.ui.questionnaire_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (287.1kB)
+[2017-10-17 16:10:17] Fetching org.apache.commons.codec_1.9.0.v20170208-1614.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (104.09kB)
+[2017-10-17 16:10:17] Downloading org.eclipse.oomph.setup.core
+[2017-10-17 16:10:17] Downloading org.eclipse.oomph.setup.edit
+[2017-10-17 16:10:17] Downloading org.eclipse.oomph.setup
+[2017-10-17 16:10:17] Downloading org.eclipse.oomph.ui
+[2017-10-17 16:10:17] Fetching org.eclipse.oomph.setup.core_1.8.0.v20170531-0903.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (92.78kB)
+[2017-10-17 16:10:17] Fetching org.eclipse.oomph.ui_1.8.0.v20170327-1117.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (113.6kB)
+[2017-10-17 16:10:18] Downloading org.eclipse.oomph.workingsets.editor
+[2017-10-17 16:10:18] Downloading org.eclipse.oomph.setup.sync
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (46.94kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup_1.8.0.v20170408-0745.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (129.36kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup.edit_1.8.0.v20170318-0419.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (46.94kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup_1.8.0.v20170408-0745.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (129.36kB)
+[2017-10-17 16:10:18] Downloading org.eclipse.oomph.preferences
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup.sync_1.8.0.v20170530-1735.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (45.98kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.workingsets.editor_1.8.0.v20170327-1117.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (41.78kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.setup.sync_1.8.0.v20170530-1735.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (45.98kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.workingsets.editor_1.8.0.v20170327-1117.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (41.78kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.preferences_1.8.0.v20170318-0419.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (34.4kB)
+[2017-10-17 16:10:18] Downloading org.eclipse.oomph.util
+[2017-10-17 16:10:18] Downloading org.eclipse.oomph.p2.core
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.util_1.8.0.v20170706-0534.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (74.71kB)
+[2017-10-17 16:10:18] Fetching org.eclipse.oomph.p2.core_1.8.0.v20170410-0909.jar.pack.gz from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/plugins/ (72.54kB)
+[2017-10-17 16:10:19] Mirrored 15 artifacts from http://mirror.cc.columbia.edu/pub/software/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 725kb/s
+[2017-10-17 16:10:19] Mirrored 10 artifacts from http://mirrors.xmission.com/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 218kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://www.gtlib.gatech.edu/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 99kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://mirror.csclub.uwaterloo.ca/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 91kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://mirror.cc.vt.edu/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 88kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://mirror.math.princeton.edu/pub/eclipse//oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 83kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://ftp.ussg.iu.edu/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 73kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://eclipse.mirror.rafal.ca/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 68kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 67kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://ftp.osuosl.org/pub/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 58kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 44kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://mirror.onet.pl/pub/mirrors/eclipse//oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 29kb/s
+[2017-10-17 16:10:19] Mirrored 1 artifacts from http://mirror.dkm.cz/eclipse/oomph/drops/milestone/S20170714-043548-1.9.0-M1/ at 24kb/s
+[2017-10-17 16:10:19] Collected 36 artifacts for http://download.eclipse.org/oomph/updates/milestone/latest in 5.487s
+[2017-10-17 16:10:19] Collecting 439 artifacts from http://download.eclipse.org/releases/oxygen
+[2017-10-17 16:10:19] Downloading org.eclipse.platform_root
+[2017-10-17 16:10:19] Downloading org.eclipse.e4.ui.workbench3
+[2017-10-17 16:10:19] Downloading org.eclipse.wst.sse.ui.infopop
+[2017-10-17 16:10:19] Downloading org.eclipse.ecf.provider.filetransfer.ssl
+[2017-10-17 16:10:19] Downloading org.eclipse.rcp
+[2017-10-17 16:10:19] Downloading org.eclipse.wst.dtd.ui.infopop
+[2017-10-17 16:10:19] Downloading org.eclipse.recommenders.net
+[2017-10-17 16:10:19] Downloading org.eclipse.m2e.logback.appender
+[2017-10-17 16:10:19] Downloading org.eclipse.m2e.lifecyclemapping.defaults
+[2017-10-17 16:10:19] Downloading org.eclipse.egit
+[2017-10-17 16:10:19] Fetching org.eclipse.platform_root_4.7.1.v20171009-0410 from http://mirror.csclub.uwaterloo.ca/eclipse/releases/oxygen/201710111001/binary/ (195B)
+[2017-10-17 16:10:19] Fetching org.eclipse.e4.ui.workbench3_0.14.0.v20160630-0740.jar.pack.gz from http://mirror.math.princeton.edu/pub/eclipse//releases/oxygen/201710111001/plugins/ (7.93kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.egit_4.8.0.201706111038-r.jar.pack.gz from http://mirror.cc.vt.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (9.53kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.m2e.logback.appender_1.8.2.20171007-0217.jar.pack.gz from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (8.67kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.ecf.provider.filetransfer.ssl_1.0.0.v20160817-1024.jar.pack.gz from http://ftp.ussg.iu.edu/eclipse/releases/oxygen/201710111001/plugins/ (7.36kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.m2e.lifecyclemapping.defaults_1.8.2.20171007-0217.jar.pack.gz from http://mirror.cc.columbia.edu/pub/software/eclipse/releases/oxygen/201710111001/plugins/ (8.18kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.wst.dtd.ui.infopop_1.0.400.v201707252002.jar.pack.gz from http://mirrors.xmission.com/eclipse/releases/oxygen/201710111001/plugins/ (9.12kB)
+[2017-10-17 16:10:19] Downloading org.eclipse.ecf.ssl
+[2017-10-17 16:10:19] Fetching org.eclipse.wst.sse.ui.infopop_1.0.300.v201707252002.jar.pack.gz from http://eclipse.mirror.rafal.ca/releases/oxygen/201710111001/plugins/ (9.08kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.rcp_4.7.1.v20171009-0410.jar.pack.gz from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/releases/oxygen/201710111001/plugins/ (9.4kB)
+[2017-10-17 16:10:19] Fetching org.eclipse.recommenders.net_2.4.10.v20170911-1410.jar.pack.gz from http://ftp.osuosl.org/pub/eclipse/releases/oxygen/201710111001/plugins/ (8.68kB)
+[2017-10-17 16:10:20] Downloading org.eclipse.e4.ui.widgets
+[2017-10-17 16:10:20] Fetching org.eclipse.ecf.ssl_1.2.0.v20160817-1024.jar.pack.gz from http://mirror.onet.pl/pub/mirrors/eclipse//releases/oxygen/201710111001/plugins/ (9.55kB)
+[2017-10-17 16:10:20] Downloading org.eclipse.e4.ui.di
+[2017-10-17 16:10:20] Downloading org.eclipse.mylyn.wikitext.markdown.ui
+[2017-10-17 16:10:20] Fetching org.eclipse.e4.ui.widgets_1.2.0.v20160630-0736.jar.pack.gz from http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/releases/oxygen/201710111001/plugins/ (9.85kB)
+[2017-10-17 16:10:20] Fetching org.eclipse.e4.ui.di_1.2.100.v20170414-1137.jar.pack.gz from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (9.98kB)
+[2017-10-17 16:10:20] Fetching org.eclipse.mylyn.wikitext.markdown.ui_3.0.6.201703111926.jar from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (10.03kB)
+[2017-10-17 16:10:20] Downloading org.eclipse.mylyn.wikitext.twiki.ui
+[2017-10-17 16:10:20] Fetching org.eclipse.mylyn.wikitext.twiki.ui_3.0.6.201703111926.jar from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (10.29kB)
+[2017-10-17 16:10:21] Downloading org.eclipse.mylyn.wikitext.asciidoc.ui
+[2017-10-17 16:10:21] Fetching org.eclipse.mylyn.wikitext.asciidoc.ui_3.0.6.201703111926.jar from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (10.37kB)
+[2017-10-17 16:10:21] Downloading org.eclipse.buildship.branding
+[2017-10-17 16:10:21] Fetching org.eclipse.buildship.branding_2.1.2.v20170807-1324.jar.pack.gz from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/plugins/ (10.41kB)
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.tspu.ru/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.onet.pl/pub/mirrors/eclipse//technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://www.gtlib.gatech.edu/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirrors.xmission.com/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.cc.vt.edu/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://eclipse.mirror.rafal.ca/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.cc.columbia.edu/pub/software/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://ftp.ussg.iu.edu/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.math.princeton.edu/pub/eclipse//technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://ftp.osuosl.org/pub/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 0 artifacts from http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/packages/oxygen/ at 0kb/s with 3 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirror.cc.columbia.edu/pub/software/eclipse/releases/oxygen/201710111001/ at 38kb/s
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/releases/oxygen/201710111001/ at 26kb/s
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirror.csclub.uwaterloo.ca/eclipse/releases/oxygen/201710111001/ at 1kb/s
+[2017-10-17 16:10:39] Mirrored 6 artifacts from http://www.gtlib.gatech.edu/pub/eclipse/releases/oxygen/201710111001/ at 1kb/s with 2 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://ftp.osuosl.org/pub/eclipse/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://ftp.ussg.iu.edu/eclipse/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirror.math.princeton.edu/pub/eclipse//releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://eclipse.mirror.rafal.ca/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirror.cc.vt.edu/pub/eclipse/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirrors.xmission.com/eclipse/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://mirror.onet.pl/pub/mirrors/eclipse//releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Mirrored 1 artifacts from http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/releases/oxygen/201710111001/ at 0kb/s with 1 failures
+[2017-10-17 16:10:39] Collected 439 artifacts for http://download.eclipse.org/releases/oxygen in 19.654s
+[2017-10-17 16:10:39] The engine operation was cancelled and the changes are being rolled back.
+[2017-10-17 16:10:39] 
