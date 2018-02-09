@@ -9,13 +9,18 @@ public class Forest2Run {
 		//Opening, start of every new game
 		System.out.println("Would you like to read the rules? (Y/N)");
 		String choice = scanStr.next().toUpperCase();
-		if (choice.equals("Y")) {
+		if (choice.equals("Y")){
 			Forest2Menu.rules();
 		}
 		
+		//create player
+		Forest2Player player = new Forest2Player();
+		
+		//create inventory
+		Forest2Inv inventory= new Forest2Inv();
 		
 		
 		//end of main
-		scanStr.close();
+		//scanStr.close(); do not close here
 	}
 }
