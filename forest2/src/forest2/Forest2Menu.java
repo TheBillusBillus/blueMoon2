@@ -25,4 +25,8 @@ public class Forest2Menu {
 		scanInt.close();
 		return choice;
 	}
+	
+	public static void flee() {
+		System.out.println("The enemy has fled!");
+	}
 }
