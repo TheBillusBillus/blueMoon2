@@ -17,7 +17,8 @@ public class Forest2LoadSave {
 		while (sc.hasNext()) {
 			//replace with code to scan for
 			
-			/**String type = sc.next();
+			/**
+			String type = sc.next();
 			String family = sc.next();
 			String model = sc.next();
 			String socket = sc.next();
@@ -42,16 +43,16 @@ public class Forest2LoadSave {
 		sc.close();
 		// System.out.println("DATA HAS BEEN LOADED");
 	}
-	/**
 	public static void save() {
 		System.out.println("WRITE MODE");
 		Formatter x = null;
 
 		try {
-			x = new Formatter("cpuLog.txt");
+			x = new Formatter("gameSave.txt");
 		} catch (Exception e) {
 			System.out.println("ERROR");
 		}
+		/**
 		for (int i = 0; i < maxSize; i++) {
 			if (store[i].family == null) {
 				break;
@@ -62,6 +63,7 @@ public class Forest2LoadSave {
 		
 		x.close();
 		System.out.println("DATA HAS BEEN WRITTEN TO FILE");
+		**/
 	}
-	**/
+	
 }

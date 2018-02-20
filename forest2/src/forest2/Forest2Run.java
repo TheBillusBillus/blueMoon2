@@ -19,6 +19,10 @@ public class Forest2Run {
 		//create inventory
 		Forest2Inv inventory= new Forest2Inv();
 		
+		while (player.hp > 0) {
+			
+		}
+		
 		
 		//end of main
 		//scanStr.close(); do not close here

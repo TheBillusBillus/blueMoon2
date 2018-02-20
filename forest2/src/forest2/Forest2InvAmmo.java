@@ -1,6 +1,6 @@
 package forest2;
 
-public class Forest2InvAmmo {
+public class Forest2InvAmmo extends Forest2Inv{
 	public int cal22;
 	public int cal9;
 	public int cal10;
