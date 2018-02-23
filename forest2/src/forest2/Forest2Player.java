@@ -6,9 +6,6 @@ public class Forest2Player {
 	public int hp;
 	public int food;
 	public int water;
-	public int hpCap;
-	public int foodCap;
-	public int waterCap;
 	public int distance;
 	
 	public Forest2Player () {
@@ -17,9 +14,11 @@ public class Forest2Player {
 		this.hp = 100;
 		this.food = 100;
 		this.water = 100;
-		this.hpCap = 100;
-		this.foodCap = 100;
-		this.waterCap = 100;
 		this.distance = 0;
 	}
+	
+	public String toString() {
+		return (this.lv + " " + this.xp + " " + this.hp + " " + this.food + " " + this.water + " " + this.distance + " ");
+	}
 }
+

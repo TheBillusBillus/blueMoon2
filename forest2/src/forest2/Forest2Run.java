@@ -17,10 +17,13 @@ public class Forest2Run {
 		Forest2Player player = new Forest2Player();
 		
 		//create inventory
-		Forest2Inv inventory= new Forest2Inv();
+		Forest2Inv invAmmo= new Forest2InvAmmo();
+		Forest2Inv invArmor= new Forest2InvArmor();
+		Forest2Inv invSup= new Forest2InvSupplies();
+		Forest2Inv invWep= new Forest2InvWeapons();
 		
 		while (player.hp > 0) {
-			
+			//this runs every turn
 		}
 		
 		

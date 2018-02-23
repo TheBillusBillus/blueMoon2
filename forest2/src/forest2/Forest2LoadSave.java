@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Forest2LoadSave {
 	public static void load() {
-		//System.out.println("READ MODE");
+		// System.out.println("READ MODE");
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File("Forest2Save.txt"));
@@ -15,35 +15,34 @@ public class Forest2LoadSave {
 		}
 		int i = 0;
 		while (sc.hasNext()) {
-			//replace with code to scan for
+			// replace with code to scan for
+			String lv = sc.next();
+			String xp = sc.next();
+			String hp = sc.next();
+			String food = sc.next();
+			String water = sc.next();
+			String distance = sc.next();
 			
 			/**
-			String type = sc.next();
-			String family = sc.next();
-			String model = sc.next();
-			String socket = sc.next();
-			String freq = sc.next();
-			String freqOC = sc.next();
-			String fsb = sc.next();
-			String width = sc.next();
-			String core = sc.next();
-			String thread = sc.next();
-			String multiMin = sc.next();
-			String multiMax = sc.next();
-			String vcoreBase = sc.next();
-			String vcoreMax = sc.next();
-			String vcoreOC = sc.next();
-
-			store[i] = new cpuL(type, family, model, socket, Integer.parseInt(freq), Integer.parseInt(freqOC),
-					Integer.parseInt(fsb), Integer.parseInt(width), Integer.parseInt(core), Integer.parseInt(thread),
-					Float.parseFloat(multiMin), Float.parseFloat(multiMax), Float.parseFloat(vcoreBase),
-					Float.parseFloat(vcoreMax), Float.parseFloat(vcoreOC));
-			**/
+			 * String type = sc.next(); String family = sc.next(); String model = sc.next();
+			 * String socket = sc.next(); String freq = sc.next(); String freqOC =
+			 * sc.next(); String fsb = sc.next(); String width = sc.next(); String core =
+			 * sc.next(); String thread = sc.next(); String multiMin = sc.next(); String
+			 * multiMax = sc.next(); String vcoreBase = sc.next(); String vcoreMax =
+			 * sc.next(); String vcoreOC = sc.next();
+			 * 
+			 * store[i] = new cpuL(type, family, model, socket, Integer.parseInt(freq),
+			 * Integer.parseInt(freqOC), Integer.parseInt(fsb), Integer.parseInt(width),
+			 * Integer.parseInt(core), Integer.parseInt(thread), Float.parseFloat(multiMin),
+			 * Float.parseFloat(multiMax), Float.parseFloat(vcoreBase),
+			 * Float.parseFloat(vcoreMax), Float.parseFloat(vcoreOC));
+			 **/
 		}
 		sc.close();
 		// System.out.println("DATA HAS BEEN LOADED");
 	}
-	public static void save() {
+
+	public static void save(Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvArmor invArmor, Forest2InvSupplies invSup, Forest2InvWeapons invWep) {
 		System.out.println("WRITE MODE");
 		Formatter x = null;
 
@@ -64,6 +63,7 @@ public class Forest2LoadSave {
 		x.close();
 		System.out.println("DATA HAS BEEN WRITTEN TO FILE");
 		**/
+		x.format("%s", player.lv, " ",  player.xp, " ",  player.hp, " ",  player.food, " ",  player.water, " ",  player.distance);
 	}
-	
+
 }
