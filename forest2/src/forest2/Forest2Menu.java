@@ -8,18 +8,29 @@ public class Forest2Menu {
 		for (int i = 0; i < 50; ++i)
 			System.out.println();
 		System.out.println("WELCOME MISSING!!!!!");
-		System.out.println("WELCOME MISSING!!!!!");
-		System.out.println("WELCOME MISSING!!!!!");
 	}
 
 	public static void rules() {
 		for (int i = 0; i < 50; ++i)
 			System.out.println();
-		System.out.println("RULES MISSING!!!!!");
-		System.out.println("RULES MISSING!!!!!");
-		System.out.println("RULES MISSING!!!!!");
+		System.out.println("RULES & TUTORIAL MISSING!!!!!");
 	}
-
+	
+	public static int menuInput() {
+		Scanner scanInt = new Scanner(System.in);
+		try {
+			int choice = scanInt.nextInt();
+			for (int i = 0; i < 50; ++i)
+				System.out.println();
+			return choice;
+		} catch (Exception e) {
+			for (int i = 0; i < 50; ++i)
+				System.out.println();
+			System.out.println("Invalid input!");
+			return 0;
+		}
+	}
+	
 	public static int mainMenu() {
 		System.out.println("===== Main Menu =====");
 		System.out.println("1. Hunt");
@@ -30,11 +41,7 @@ public class Forest2Menu {
 		System.out.println("6. Save");
 		System.out.println("7. Load");
 		System.out.println("8. Exit");
-		Scanner scanInt = new Scanner(System.in);
-		int choice = scanInt.nextInt();
-		for (int i = 0; i < 50; ++i)
-			System.out.println();
-		return choice;
+		return Forest2Menu.menuInput();
 	}
 
 	public static void flee() {
@@ -45,13 +52,44 @@ public class Forest2Menu {
 		System.out.println("===== Camp =====");
 		System.out.println("1. Camp Fire");
 		System.out.println("2. Dry meat");
-		System.out.println("3. Sleep");
+		System.out.println("3. Comsumables");
+		System.out.println("4. Sleep");
 		System.out.println("0. Back");
-		Scanner scanInt = new Scanner(System.in);
-		int choice = scanInt.nextInt();
-		for (int i = 0; i < 50; ++i)
-			System.out.println();
-		return choice;
+		return Forest2Menu.menuInput();
+	}
+	
+	public static int consumables() {
+		System.out.println("===== Consumables =====");
+		System.out.println("1. Food & Water");
+		System.out.println("2. Meds");
+		System.out.println("3. Special");
+		System.out.println("0. Back");
+		return Forest2Menu.menuInput();
+	}
+	
+	public static int foodWater() {
+		System.out.println("===== Food & Water =====");
+		System.out.println("1. Water");
+		System.out.println("2. Dried Meat");
+		System.out.println("3. Cooked Meat");
+		System.out.println("4. MRE");
+		System.out.println("0. Back");
+		return Forest2Menu.menuInput();
+	}
+	
+	public static int meds() {
+		System.out.println("===== Meds =====");
+		System.out.println("1. Medkit");
+		System.out.println("2. Bandage");
+		System.out.println("3. Painkiller");
+		System.out.println("0. Back");
+		return Forest2Menu.menuInput();
+	}
+	
+	public static int special() {
+		System.out.println("1. Bullet");
+		System.out.println("0. Back");
+		return Forest2Menu.menuInput();
 	}
 
 	public static int campFireMenu(Forest2Player player) {
@@ -64,23 +102,16 @@ public class Forest2Menu {
 		System.out.println("2. Cook meat");
 		System.out.println("3. Boil water");
 		System.out.println("0. Back");
-		Scanner scanInt = new Scanner(System.in);
-		int choice = scanInt.nextInt();
-		for (int i = 0; i < 50; ++i)
-			System.out.println();
-		return choice;
+		return Forest2Menu.menuInput();
 	}
 
-	public static int saveMenu() {
-		System.out.println("===== Save & Load =====");
-		Scanner scanInt = new Scanner(System.in);
-		int choice = scanInt.nextInt();
-		for (int i = 0; i < 50; ++i)
-			System.out.println();
-		return choice;
-	}
-
-	public static void statsMenu() {
-
+	public static int statsMenu() {
+		System.out.println("===== Stats & Inventory =====");
+		System.out.println("1. Player Stats");
+		System.out.println("2. Weapons");
+		System.out.println("3. Armor");
+		System.out.println("4. Supplies");
+		System.out.println("5. Ammo");
+		return Forest2Menu.menuInput();
 	}
 }

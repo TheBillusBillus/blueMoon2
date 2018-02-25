@@ -9,7 +9,7 @@ public class Forest2LoadSave {
 		// System.out.println("READ MODE");
 		Scanner sc = null;
 		try {
-			sc = new Scanner(new File("Forest2Save.txt"));
+			sc = new Scanner(new File("gameSave.txt"));
 		} catch (Exception e) {
 			System.out.println("READ ERROR");
 		}
@@ -38,7 +38,7 @@ public class Forest2LoadSave {
 			System.out.println("ERROR");
 		}
 
-		x.format("%s", player.lv, " ",  player.xp, " ",  player.hp, " ",  player.food, " ",  player.water, " ",  player.distance);
+		x.format("%s", player, invAmmo, invArmor, invSup, invWep);
 		x.close();
 		System.out.println("DATA HAS BEEN WRITTEN TO FILE");
 	}
