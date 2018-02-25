@@ -35,11 +35,11 @@ public class Forest2Run {
 				break;
 			case 3:
 				// camp
-				Forest2Actions.camp();
+				Forest2Actions.camp(player);
 				break;
 			case 4:
 				// travel
-				Forest2Actions.travel();
+				Forest2Actions.travel(player);
 				break;
 			case 5:
 				// stats+inventory
