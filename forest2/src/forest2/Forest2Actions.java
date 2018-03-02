@@ -54,40 +54,93 @@ public class Forest2Actions {
 			break;
 		case 2:
 			// dry meat
-			invSup.rawMeat--;
-			invSup.driedMeat++;
+			if (invSup.rawMeat > 1) {
+				invSup.rawMeat--;
+				invSup.driedMeat++;
+			} else {
+				System.out.println("You have no raw meat to dry!");
+			}
 			break;
 		case 3:
 			switch (Forest2Menu.consumables()) {
 			case 1:
 				switch (Forest2Menu.foodWater()) {
 				case 1:
+					if (invSup.water > 1) {
+						player.water = player.water + 30;
+						invSup.water--;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no water!");
+					}
+					break;
 				case 2:
+					if (invSup.driedMeat > 1) {
+						player.food = player.food + 5;
+						invSup.driedMeat--;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no dried meat!");
+					}
+					break;
 				case 3:
+					if (invSup.cookedMeat > 1) {
+						player.food = player.food + 15;
+						invSup.cookedMeat--;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no cooked meat!");
+					}
+					break;
 				case 4:
+					if (invSup.mre > 1) {
+						player.food = player.food + 30;
+						player.water = player.water + 30;
+						invSup.mre--;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no MRE!");
+					}
+					break;
 				case 0:
+					break;
 				}
 
 			case 2:
 				switch (Forest2Menu.meds()) {
 				case 1:
-					invSup.medkit--;
-					player.hp = player.lv * 20 + 100;
+					if (invSup.medkit > 1) {
+						invSup.medkit--;
+						player.hp = player.lv * 20 + 100;
+					} else {
+						System.out.println("You have no medkit!");
+					}
+					break;
 				case 2:
-					invSup.bandages--;
-					player.hp = player.hp + 50;
-					Forest2Actions.statCap(player);
-
+					if (invSup.bandages > 1) {
+						invSup.bandages--;
+						player.hp = player.hp + 50;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no bandages!");
+					}
+					break;
 				case 3:
-					invSup.painkillers--;
-					player.hp = player.hp + 25;
-					Forest2Actions.statCap(player);
+					if (invSup.painkillers > 1) {
+						invSup.painkillers--;
+						player.hp = player.hp + 25;
+						Forest2Actions.statCap(player);
+					} else {
+						System.out.println("You have no painkillers!");
+					}
+					break;
 				}
 
 			case 3:
 				switch (Forest2Menu.special()) {
 				case 1:
 					player.hp = 0;
+					break;
 				case 0:
 					break;
 				}
@@ -124,6 +177,14 @@ public class Forest2Actions {
 				break;
 			case 2:
 				// meat - 1, wood - 1, cooked meat + 1
+				if (invSup.wood>1 && invSup.rawMeat>1) {
+					invSup.wood--;
+					invSup.rawMeat--;
+					invSup.cookedMeat++;
+					System.out.println("You cooked a piece of meat on the camp fire.");
+				}else {
+					System.out.println("You are missing resources!");
+				}
 				break;
 			case 3:
 				if (invSup.water < 10) {
@@ -138,13 +199,18 @@ public class Forest2Actions {
 		}
 	}
 
-	public static void travel(Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvArmor invArmor, Forest2InvSupplies invSup, Forest2InvWeapons invWep) {
-		if (invAmmo.ammoWt() < player.lv * 10 + 100) {
-			Random rand = new Random();
-			int n = rand.nextInt(7) + 4;
-			System.out.println("You traveled " + n + "km.");
+	public static void travel(Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvArmor invArmor,
+			Forest2InvSupplies invSup, Forest2InvWeapons invWep) {
+		if ((invAmmo.ammoWt()) < player.lv * 10 + 100) {
+			if (player.rp > 10) {
+				Random rand = new Random();
+				int n = rand.nextInt(7) + 4;
+				System.out.println("You traveled " + n + "km.");
+			} else {
+				System.out.println("You are too tired to travel!");
+			}
 		} else {
-			System.out.println("Your items weigh too much to travel");
+			System.out.println("Your items weigh too much to travel!");
 		}
 	}
 
