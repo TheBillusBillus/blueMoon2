@@ -49,7 +49,25 @@ public class Forest2Run {
 				break;
 			case 5:
 				// stats+inventory
-				Forest2Menu.statsMenu();
+				switch(Forest2Menu.statsMenu()) {
+				case 1:
+					Forest2Menu.statsPlayer(player);
+					break;
+				case 2:
+					Forest2Menu.statsWep((Forest2InvWeapons) invWep);
+					break;
+				case 3:
+					Forest2Menu.statsArmor((Forest2InvArmor) invArmor);
+					break;
+				case 4:
+					Forest2Menu.statsSup((Forest2InvSupplies) invSup);
+					break;
+				case 5:
+					Forest2Menu.statsAmmo((Forest2InvAmmo) invAmmo);
+					break;
+				case 0:
+					break;
+				}
 				break;
 			case 6:
 				//save
