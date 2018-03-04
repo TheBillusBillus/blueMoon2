@@ -46,6 +46,7 @@ public class Forest2Run {
 			case 4:
 				// travel
 				Forest2Actions.travel(player, (Forest2InvAmmo) invAmmo, (Forest2InvArmor) invArmor, (Forest2InvSupplies) invSup, (Forest2InvWeapons) invWep);
+				player.fire = false;
 				break;
 			case 5:
 				// stats+inventory
@@ -75,7 +76,7 @@ public class Forest2Run {
 				break;
 			case 7:
 				//load
-				Forest2LoadSave.load();
+				Forest2LoadSave.load(player, (Forest2InvAmmo) invAmmo, (Forest2InvArmor) invArmor, (Forest2InvSupplies) invSup, (Forest2InvWeapons) invWep);
 			case 8:
 				//exit game
 				System.exit(0);

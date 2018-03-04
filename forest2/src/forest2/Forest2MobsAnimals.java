@@ -12,32 +12,37 @@ public class Forest2MobsAnimals extends Forest2Mobs {
 	
 	public void type() {
 		Random rand = new Random();
-		switch (rand.nextInt(1)) {
+		switch (rand.nextInt(5)) {
 		case 0:
 			System.out.println("You've encountered a wild rabbit.");
-			this.hp = (int) Math.floor(this.hp*0.2);
+			this.hp = (int) Math.floor(this.hp*0.2)+1;
 			this.dmg = (int) Math.floor(this.dmg*0);
 			this.name = "rabbit";
+			break;
 		case 1:
 			System.out.println("You've encountered a wild duck.");
-			this.hp = (int) Math.floor(this.hp*0.3);
+			this.hp = (int) Math.floor(this.hp*0.3)+1;
 			this.dmg = (int) Math.floor(this.dmg*0.2);
 			this.name = "duck";
+			break;
 		case 2:
 			System.out.println("You've encountered a squirrel.");
-			this.hp = (int) Math.floor(this.hp*0.2);
+			this.hp = (int) Math.floor(this.hp*0.2)+1;
 			this.dmg = (int) Math.floor(this.dmg*0.3);
 			this.name = "squirrel";
+			break;
 		case 3:
 			System.out.println("You've encountered a deer.");
-			this.hp = (int) Math.floor(this.hp*1.5);
+			this.hp = (int) Math.floor(this.hp*1.5)+1;
 			this.dmg = (int) Math.floor(this.dmg*1.3);
 			this.name = "deer";
+			break;
 		case 4:
 			System.out.println("You've encountered a bear.");
-			this.hp = (int) Math.floor(this.hp*2);
+			this.hp = (int) Math.floor(this.hp*2)+1;
 			this.dmg = (int) Math.floor(this.dmg*4);
 			this.name = "bear";
+			break;
 		}
 	}
 

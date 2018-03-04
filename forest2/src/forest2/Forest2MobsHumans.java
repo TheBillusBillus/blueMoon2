@@ -7,7 +7,6 @@ public class Forest2MobsHumans extends Forest2Mobs {
 		super(player);
 		// TODO Auto-generated constructor stub
 		Random rand = new Random();
-		this.lv = (int) (this.lv * Math.floor( rand.nextInt(4)+.5));
 		this.hp = (int) Math.floor(this.hp*2.5);
 		this.dmg = (int) Math.floor(this.dmg*.5);
 	}
@@ -17,9 +16,10 @@ public class Forest2MobsHumans extends Forest2Mobs {
 		switch (rand.nextInt(1)) {
 		case 0:
 			System.out.println("You've encounted a Trapper.");
-			this.hp = (int) Math.floor(this.hp*1.5);
+			this.hp = (int) Math.floor(this.hp*1.5)+1;
 			this.dmg = (int) Math.floor(this.dmg*1.3);
 			this.name = "Trapper";
+			break;
 		}
 	}
 

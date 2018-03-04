@@ -180,19 +180,22 @@ public class Forest2Menu {
 		switch(type) {
 		case 1:
 			System.out.println("3. Knife");
+			break;
 		case 2:
 			System.out.println("3. Threaten");
+			break;
 		case 3:
 			System.out.println("3. Run");
+			break;
 		}
 		return menuInput();
 	}
 	
 	public static int combatAttack(Forest2InvAmmo invAmmo, Forest2InvWeapons invWep) {
 		System.out.println("===== Weapons =====");
-		System.out.println("9mm Pistol: " + invAmmo.cal9 + " rds");
-		System.out.println("10mm Pistol: " + invAmmo.cal10 + " rds");
-		System.out.println("M16: " + invAmmo.cal556 + " rds");
+		System.out.println("1. 9mm Pistol: " + invAmmo.cal9 + " rds");
+		System.out.println("2. 10mm Pistol: " + invAmmo.cal10 + " rds");
+		System.out.println("3. M16: " + invAmmo.cal556 + " rds");
 		return menuInput();
 	}
 }

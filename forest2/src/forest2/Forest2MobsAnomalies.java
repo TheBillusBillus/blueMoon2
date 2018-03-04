@@ -19,6 +19,7 @@ public class Forest2MobsAnomalies extends Forest2Mobs {
 			this.hp = (int) Math.floor(this.hp*1.5);
 			this.dmg = (int) Math.floor(this.dmg*1.3);
 			this.name = "Reaper";
+			break;
 		}
 	}
 

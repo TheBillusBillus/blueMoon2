@@ -54,6 +54,7 @@ public class Forest2Actions {
 		if (n < 6) {
 			int type = 1;
 			Forest2MobsAnimals mob = new Forest2MobsAnimals(player);
+			mob.type();
 			while (mob.hp > 0 && player.hp > 0 && pres == true) {
 				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
 				case 1:
@@ -71,10 +72,14 @@ public class Forest2Actions {
 					break;
 				}
 				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
+				if (mob.hp <= 0) {
+					System.out.println("You have killed the "+mob.name+"!");
+				}
 			}
 		} else if (n < 9) {
 			int type = 2;
 			Forest2MobsHumans mob = new Forest2MobsHumans(player);
+			mob.type();
 			while (mob.hp > 0 && player.hp > 0 && pres == true) {
 				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
 				case 1:
@@ -92,10 +97,14 @@ public class Forest2Actions {
 					break;
 				}
 				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
+				if (mob.hp <= 0) {
+					System.out.println("You have killed the "+mob.name+"!");
+				}
 			}
 		} else {
 			int type = 3;
 			Forest2MobsAnomalies mob = new Forest2MobsAnomalies(player);
+			mob.type();
 			while (mob.hp > 0 && player.hp > 0 && pres == true) {
 				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
 				case 1:
@@ -116,6 +125,9 @@ public class Forest2Actions {
 				player.hp = player.hp - mob.dmg * (invArmor.dt / 10);
 				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
 				mob.special(player);
+				if (mob.hp <= 0) {
+					System.out.println("You have killed the "+mob.name+"!");
+				}
 			}
 		}
 	}
