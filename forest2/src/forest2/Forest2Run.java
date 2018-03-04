@@ -33,7 +33,7 @@ public class Forest2Run {
 			switch (Forest2Menu.mainMenu()) {
 			case 1:
 				// hunt
-				Forest2Actions.hunt(player);
+				Forest2Actions.hunt(player, (Forest2InvAmmo) invAmmo, (Forest2InvWeapons) invWep, (Forest2InvArmor) invArmor, (Forest2InvSupplies) invSup);
 				break;
 			case 2:
 				// scavenge
@@ -85,7 +85,15 @@ public class Forest2Run {
 			System.out.println("Congradulations, You've won the game!");
 		}
 		if (Forest2Actions.alive(player) == false) {
-			System.out.println("You have died");
+			if (player.hp < 0) {
+				System.out.println("You have been diagnosed with dead!");
+			}
+			if (player.food < 0) {
+				System.out.println("You have been diagnosed with dead from starve!");
+			}
+			if (player.water < 0) {
+				System.out.println("You have been diagnosed with dead from thirst!");
+			}
 		} 
 
 		// end of main

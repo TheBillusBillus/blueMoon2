@@ -14,7 +14,6 @@ public class Forest2Main {
 		
 		String choice = scanStr.next().toUpperCase();
 		while (choice.equals("Y")) {
-			System.out.println("test2");
 			Forest2Run.main();
 		}
 		

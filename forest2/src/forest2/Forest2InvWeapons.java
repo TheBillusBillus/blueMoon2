@@ -7,9 +7,6 @@ public class Forest2InvWeapons extends Forest2Inv {
 
 	public int charge;
 
-	/**
-	 * r = rifle p = pistol
-	 */
 	public Forest2InvWeapons() {
 		this.p9 = 1;
 		this.p10 = 1;
@@ -18,7 +15,11 @@ public class Forest2InvWeapons extends Forest2Inv {
 		this.charge = 1;
 	}
 
+	public double wepWt() {
+		return this.p9 * 3 + this.p10 * 3 + this.r556 * 10 + this.charge * 5;
+	}
+
 	public String toString() {
-		return this.p9 + " " + this.p10 + " " + this.r556 + " " +      this.charge + " ";
+		return this.p9 + " " + this.p10 + " " + this.r556 + " " + this.charge + " ";
 	}
 }

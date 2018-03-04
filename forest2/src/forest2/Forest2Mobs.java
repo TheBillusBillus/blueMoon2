@@ -1,13 +1,17 @@
 package forest2;
 
+import java.util.Random;
+
 public class Forest2Mobs {
+	public int lv;
 	public int hp;
 	public int dmg;
-	public int lv;
-	
-	public Forest2Mobs() {
-		this.hp = 100; // to be determined
-		this.dmg = 5; // to be determined
-		this.lv = 1; // to be determined using player lv and rng
+	public String name;
+
+	public Forest2Mobs(Forest2Player player) {
+		Random rand = new Random();
+		this.lv = rand.nextInt(player.lv+6) + player.lv-5;
+		this.hp = this.lv; // to be finalized by type and class
+		this.dmg = this.lv; // to be finalized by type and class
 	}
 }

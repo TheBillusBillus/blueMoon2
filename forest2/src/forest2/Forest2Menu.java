@@ -55,7 +55,7 @@ public class Forest2Menu {
 		System.out.println("3. Comsumables");
 		System.out.println("4. Sleep");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int consumables() {
@@ -64,7 +64,7 @@ public class Forest2Menu {
 		System.out.println("2. Meds");
 		System.out.println("3. Special");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int foodWater() {
@@ -74,7 +74,7 @@ public class Forest2Menu {
 		System.out.println("3. Cooked Meat");
 		System.out.println("4. MRE");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int meds() {
@@ -83,13 +83,15 @@ public class Forest2Menu {
 		System.out.println("2. Bandage");
 		System.out.println("3. Painkiller");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int special() {
+		System.out.println("===== Specials =====");
 		System.out.println("1. Bullet");
+		System.out.println("2. Irradiated Rock");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int campFireMenu(Forest2Player player) {
@@ -102,7 +104,7 @@ public class Forest2Menu {
 		System.out.println("2. Cook meat");
 		System.out.println("3. Boil water");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static int statsMenu() {
@@ -113,7 +115,7 @@ public class Forest2Menu {
 		System.out.println("4. Supplies");
 		System.out.println("5. Ammo");
 		System.out.println("0. Back");
-		return Forest2Menu.menuInput();
+		return menuInput();
 	}
 
 	public static void statsPlayer(Forest2Player player) {
@@ -170,5 +172,27 @@ public class Forest2Menu {
 		System.out.println("7.62x51mm: "+invAmmo.cal762x51);
 		System.out.println(".50 cal: "+invAmmo.cal50);
 	}
-
+	
+	public static int combat(int type, Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvWeapons invWep) {
+		System.out.println("===== Combat =====");
+		System.out.println("1. Attack");
+		System.out.println("2. Hide");
+		switch(type) {
+		case 1:
+			System.out.println("3. Knife");
+		case 2:
+			System.out.println("3. Threaten");
+		case 3:
+			System.out.println("3. Run");
+		}
+		return menuInput();
+	}
+	
+	public static int combatAttack(Forest2InvAmmo invAmmo, Forest2InvWeapons invWep) {
+		System.out.println("===== Weapons =====");
+		System.out.println("9mm Pistol: " + invAmmo.cal9 + " rds");
+		System.out.println("10mm Pistol: " + invAmmo.cal10 + " rds");
+		System.out.println("M16: " + invAmmo.cal556 + " rds");
+		return menuInput();
+	}
 }

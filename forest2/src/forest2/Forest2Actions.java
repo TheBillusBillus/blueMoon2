@@ -12,6 +12,12 @@ public class Forest2Actions {
 		}
 	}
 
+	/**
+	 * caps player attributes and updates lv every time the player earns xp or uses
+	 * a consumable
+	 * 
+	 * @param player
+	 */
 	public static void statCap(Forest2Player player) {
 		if (player.hp > player.lv * 20 + 100) {
 			player.hp = player.lv * 20 + 100;
@@ -25,6 +31,11 @@ public class Forest2Actions {
 		if (player.rp > player.lv * 10 + 100) {
 			player.rp = player.lv * 10 + 100;
 		}
+
+		while (player.xp > (int) Math.floor(Math.pow(100, (player.lv / 10 + 1)))) {
+			player.xp = (int) (player.xp - Math.floor(Math.pow(100, (player.lv / 10 + 1))));
+			player.lv++;
+		}
 	}
 
 	public static Boolean win(Forest2Player player) {
@@ -35,8 +46,120 @@ public class Forest2Actions {
 		}
 	}
 
-	public static void hunt(Forest2Player player) {
+	public static void hunt(Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvWeapons invWep,
+			Forest2InvArmor invArmor, Forest2InvSupplies invSup) {
+		Random rand = new Random();
+		int n = rand.nextInt(10);
+		Boolean pres = true;
+		if (n < 6) {
+			int type = 1;
+			Forest2MobsAnimals mob = new Forest2MobsAnimals(player);
+			while (mob.hp > 0 && player.hp > 0 && pres == true) {
+				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
+				case 1:
+					combatAttack(invAmmo, invWep, mob);
+					break;
+				case 2:
+					if (hide(player, mob)) {
+						pres = false;
+					}
+					break;
+				case 3:
+					if (mob.knife(player, invSup)) {
+						pres = false;
+					}
+					break;
+				}
+				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
+			}
+		} else if (n < 9) {
+			int type = 2;
+			Forest2MobsHumans mob = new Forest2MobsHumans(player);
+			while (mob.hp > 0 && player.hp > 0 && pres == true) {
+				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
+				case 1:
+					combatAttack(invAmmo, invWep, mob);
+					break;
+				case 2:
+					if (hide(player, mob)) {
+						pres = false;
+					}
+					break;
+				case 3:
+					if (mob.threaten(player, invAmmo, invWep, invArmor)) {
+						pres = false;
+					}
+					break;
+				}
+				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
+			}
+		} else {
+			int type = 3;
+			Forest2MobsAnomalies mob = new Forest2MobsAnomalies(player);
+			while (mob.hp > 0 && player.hp > 0 && pres == true) {
+				switch (Forest2Menu.combat(type, player, invAmmo, invWep)) {
+				case 1:
+					combatAttack(invAmmo, invWep, mob);
+					break;
+				case 2:
+					if (hide(player, mob)) {
+						mob.special(player);
+						pres = false;
+					}
+					break;
+				case 3:
+					if (mob.run(player)) {
+						pres = false;
+					}
+					break;
+				}
+				player.hp = player.hp - mob.dmg * (invArmor.dt / 10);
+				System.out.println("You were attacked by the " + mob.name + " and lost " + mob.dmg + " HP.");
+				mob.special(player);
+			}
+		}
+	}
 
+	public static void combatAttack(Forest2InvAmmo invAmmo, Forest2InvWeapons invWep, Forest2Mobs mob) {
+		switch (Forest2Menu.combatAttack(invAmmo, invWep)) {
+		case 1:
+			if (invAmmo.cal9 > 0 && invWep.p9 > 0) {
+				invAmmo.cal9--;
+				mob.hp = mob.hp - 5;
+				System.out.println("You attacked the " + mob.name + " and dealt 5 dmg.");
+			} else {
+				System.out.println("Something's not right!");
+			}
+			break;
+		case 2:
+			if (invAmmo.cal10 > 0 && invWep.p10 > 0) {
+				invAmmo.cal10--;
+				mob.hp = mob.hp - 7;
+				System.out.println("You attacked the " + mob.name + " and dealt 7 dmg.");
+			} else {
+				System.out.println("Something's not right!");
+			}
+			break;
+		case 3:
+			if (invAmmo.cal556 > 0 && invWep.r556 > 0) {
+				invAmmo.cal556--;
+				mob.hp = mob.hp - 12;
+				System.out.println("You attacked the " + mob.name + " and dealt 12 dmg.");
+			} else {
+				System.out.println("Something's not right!");
+			}
+			break;
+		}
+	}
+
+	public static Boolean hide(Forest2Player player, Forest2Mobs mob) {
+		if (player.lv > mob.lv + 3) {
+			System.out.println("You successfully hid from the " + mob.name + ".");
+			return true;
+		} else {
+			System.out.println("You tried to hide from the " + mob.name + " but it clearly failed.");
+			return false;
+		}
 	}
 
 	public static void scavenge(Forest2Player player, Forest2InvSupplies invSup) {
@@ -44,7 +167,11 @@ public class Forest2Actions {
 		int n = rand.nextInt(7) + 4;
 		player.food = player.food - (n * 2);
 		player.water = player.water - (n * 3);
-		invSup.wood = invSup.wood + (n);
+		int w = (int) Math.floor(n * rand.nextInt(11) / 10);
+		invSup.wood = invSup.wood + w;
+
+		System.out.println("You scavenged for materials for " + n + " hours");
+		System.out.println("You found " + w + " peices of wood.");
 	}
 
 	public static void camp(Forest2Player player, Forest2InvSupplies invSup) {
@@ -87,7 +214,7 @@ public class Forest2Actions {
 					if (invSup.cookedMeat > 1) {
 						player.food = player.food + 15;
 						invSup.cookedMeat--;
-						Forest2Actions.statCap(player);
+						statCap(player);
 					} else {
 						System.out.println("You have no cooked meat!");
 					}
@@ -97,7 +224,7 @@ public class Forest2Actions {
 						player.food = player.food + 30;
 						player.water = player.water + 30;
 						invSup.mre--;
-						Forest2Actions.statCap(player);
+						statCap(player);
 					} else {
 						System.out.println("You have no MRE!");
 					}
@@ -105,7 +232,7 @@ public class Forest2Actions {
 				case 0:
 					break;
 				}
-
+				break;
 			case 2:
 				switch (Forest2Menu.meds()) {
 				case 1:
@@ -120,7 +247,7 @@ public class Forest2Actions {
 					if (invSup.bandages > 1) {
 						invSup.bandages--;
 						player.hp = player.hp + 50;
-						Forest2Actions.statCap(player);
+						statCap(player);
 					} else {
 						System.out.println("You have no bandages!");
 					}
@@ -129,17 +256,24 @@ public class Forest2Actions {
 					if (invSup.painkillers > 1) {
 						invSup.painkillers--;
 						player.hp = player.hp + 25;
-						Forest2Actions.statCap(player);
+						statCap(player);
 					} else {
 						System.out.println("You have no painkillers!");
 					}
 					break;
 				}
-
+				break;
 			case 3:
 				switch (Forest2Menu.special()) {
 				case 1:
 					player.hp = 0;
+					break;
+				case 2:
+					player.xp = player.xp + 1000;
+					System.out.println("You studies the rock because of its unique radioactive properties.");
+					System.out.println("Documenting your findings, you became more knowledgeable about the anomalies.");
+					System.out.println("+1000 xp.");
+					statCap(player);
 					break;
 				case 0:
 					break;
@@ -148,9 +282,10 @@ public class Forest2Actions {
 			case 0:
 				break;
 			}
+			break;
 
 		case 4:
-			Forest2Actions.sleep(player);
+			sleep(player);
 			break;
 		case 0:
 			break;
@@ -177,12 +312,12 @@ public class Forest2Actions {
 				break;
 			case 2:
 				// meat - 1, wood - 1, cooked meat + 1
-				if (invSup.wood>1 && invSup.rawMeat>1) {
+				if (invSup.wood > 1 && invSup.rawMeat > 1) {
 					invSup.wood--;
 					invSup.rawMeat--;
 					invSup.cookedMeat++;
 					System.out.println("You cooked a piece of meat on the camp fire.");
-				}else {
+				} else {
 					System.out.println("You are missing resources!");
 				}
 				break;
@@ -193,6 +328,7 @@ public class Forest2Actions {
 				} else {
 					System.out.println("Your bottle is already full!");
 				}
+				break;
 			case 0:
 				loop = 0;
 			}
@@ -201,10 +337,12 @@ public class Forest2Actions {
 
 	public static void travel(Forest2Player player, Forest2InvAmmo invAmmo, Forest2InvArmor invArmor,
 			Forest2InvSupplies invSup, Forest2InvWeapons invWep) {
-		if ((invAmmo.ammoWt()) < player.lv * 10 + 100) {
+		if ((invAmmo.ammoWt() + invArmor.armorWt() + invSup.supWt() + invWep.wepWt()) < player.lv * 10 + 100) {
 			if (player.rp > 10) {
 				Random rand = new Random();
 				int n = rand.nextInt(7) + 4;
+				player.rp = player.rp - n;
+				player.distance = player.distance + n;
 				System.out.println("You traveled " + n + "km.");
 			} else {
 				System.out.println("You are too tired to travel!");
@@ -217,8 +355,10 @@ public class Forest2Actions {
 	public static void sleep(Forest2Player player) {
 		Random rand = new Random();
 		int n = rand.nextInt(7) + 4;
-		player.food = player.food - (n * 2);
-		player.water = player.water - (n * 3);
+		player.food = (int) (player.food - Math.floor(n / 3));
+		player.water = (int) (player.water - Math.floor(n / 2));
+		player.rp = player.rp + (n * 3);
+		System.out.println("You slept for " + n + " hours.");
 	}
 
 	public static Boolean checkFire(Forest2Player player) {
