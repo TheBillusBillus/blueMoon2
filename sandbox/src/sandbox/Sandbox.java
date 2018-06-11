@@ -3,31 +3,36 @@ package sandbox;
 import java.util.ArrayList;
 
 public class Sandbox {
-	
-	public static void mystery1(ArrayList<Integer> list) {
-		for (int i = list.size() - 1; i > 0; i--) {
-			if (list.get(i) < list.get(i - 1)) {
-				int element = list.get(i);
-				list.remove(i);
-				list.add(0, element);
-			}
+
+	public static void main(String[] args) {
+
+		//questionOne(3);
+
+		System.out.println(questionTwo(9));
+
+		//questionThree("asdf");
+	}
+
+	public static void questionOne(int n) {
+		if (n > 0) {
+			questionOne(n - 1);
+			System.out.print(n);
+			questionOne(n - 1);
 		}
 	}
-	
-	
-	public static void removeVowels(ArrayList<String> list) {
-		for (int i = 0; i < list.size() - 1; i++) {
-			if (list.get(i) == "A") {
-				
-			}
+
+	public static int questionTwo(int n) {
+		if (n < 0)
+			return 1;
+		else
+			return questionTwo(n - 3) + questionTwo(n - 4);
+	}
+
+	public static void questionThree(String s) {
+		if (s.length() > 0) {
+			questionThree(s.substring(1));
+			System.out.print(s.substring(0, 1));
 		}
 	}
-	
-	
-	
-	public static void main (String[] args) {
-		System.out.println("1. ");
-		//ArrayList<Integer> list = new ArrayList<Integer>(.asList());
-		//mystery1();
-	}
+
 }
